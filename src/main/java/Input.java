@@ -59,6 +59,16 @@ public class Input {
         return coord;
     }
 
+    public int getUserInputMainMenu() {
+        boolean validInput = false;
+        String input = "";
+        while (!validInput) {
+            input = getUserInput();
+            validInput = validateUserInputMainMenu(input);
+        }
+        int menuChoice = Integer. parseInt(input);
+        return menuChoice;
+    }
 
     public String getUserInput() {
         Scanner myVar = new Scanner(System.in);
@@ -66,6 +76,8 @@ public class Input {
         return input;
 
     }
+
+
 
     private boolean validateUserInputCoordinate(String input) {
         String xCoord = input.substring(0, 1).toUpperCase();
@@ -75,6 +87,10 @@ public class Input {
 
     private boolean validateUserInputShipDir(String input) {
         return (input.equals("up") || input.equals("down") || input.equals("right") || input.equals("left"));
+    }
+
+    private boolean validateUserInputMainMenu(String input) {
+        return input.equals("1");
     }
 
 }
