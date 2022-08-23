@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Input {
 
-    private  Map<String, Integer> xCoordinate = new HashMap<String, Integer>(){{
+    private Map<String, Integer> xCoordinate = new HashMap<String, Integer>() {{
         put("A", 0);
         put("B", 1);
         put("C", 2);
@@ -17,7 +17,7 @@ public class Input {
         put("J", 9);
     }};
 
-    private  Map<String, Integer> yCoordinate = new HashMap<String, Integer>(){{
+    private Map<String, Integer> yCoordinate = new HashMap<String, Integer>() {{
         put("1", 0);
         put("2", 1);
         put("3", 2);
@@ -30,7 +30,7 @@ public class Input {
         put("10", 9);
     }};
 
-    public String getUserInputName(){
+    public String getUserInputName() {
         return getUserInput();
     }
 
@@ -52,7 +52,7 @@ public class Input {
             input = getUserInput();
             validInput = validateUserInputCoordinate(input);
         }
-        int xCoord = xCoordinate.get(input.substring(0,1).toUpperCase());
+        int xCoord = xCoordinate.get(input.substring(0, 1).toUpperCase());
         int yCoord = yCoordinate.get(input.substring(1).toUpperCase());
         coord[0] = xCoord;
         coord[1] = yCoord;
@@ -60,23 +60,20 @@ public class Input {
     }
 
 
-    public String getUserInput(){
+    public String getUserInput() {
         Scanner myVar = new Scanner(System.in);
         String input = myVar.nextLine();
         return input;
 
     }
 
-    private boolean validateUserInputCoordinate(String input){
-        String xCoord = input.substring(0,1).toUpperCase();
+    private boolean validateUserInputCoordinate(String input) {
+        String xCoord = input.substring(0, 1).toUpperCase();
         String yCoord = input.substring(1);
-        if (xCoordinate.containsKey(xCoord) && yCoordinate.containsKey(yCoord)){
-            return true;
-        }
-        return false;
+        return xCoordinate.containsKey(xCoord) && yCoordinate.containsKey(yCoord);
     }
 
-    private boolean validateUserInputShipDir(String input){
+    private boolean validateUserInputShipDir(String input) {
         return (input.equals("up") || input.equals("down") || input.equals("right") || input.equals("left"));
     }
 
