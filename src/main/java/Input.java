@@ -1,10 +1,29 @@
+import java.util.Scanner;
+
 public class Input {
+
+    public String getUserInputName(){
+        String input = getUserInput();
+        return getUserInput();
+    }
+
+    public String getUserInputShipDir(){
+        return "";
+    }
+
+
     public String getUserInput(){
-        return null;
+        Scanner myVar = new Scanner(System.in);
+        String input = myVar.nextLine();
+        return input;
 
     }
 
-    public String validateUserInput(){
+    private String validateUserInputCoordinate(){
+        return null;
+    }
+
+    private String validateUserInputShipDir(){
         return null;
     }
 
