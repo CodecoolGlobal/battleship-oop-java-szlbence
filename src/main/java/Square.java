@@ -4,7 +4,7 @@ public class Square {
 
     private SquareType square;
 
-    private Square(SquareType square) {
+    protected Square(SquareType square) {
         this.square = square;
     }
 
