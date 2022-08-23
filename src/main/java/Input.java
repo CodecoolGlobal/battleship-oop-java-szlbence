@@ -3,12 +3,17 @@ import java.util.Scanner;
 public class Input {
 
     public String getUserInputName(){
-        String input = getUserInput();
         return getUserInput();
     }
 
-    public String getUserInputShipDir(){
-        return "";
+    public String getUserInputShipDir() {
+        boolean validInput = false;
+        String input = "";
+        while (!validInput) {
+            input = getUserInput();
+            validInput = validateUserInputShipDir(input);
+        }
+        return input;
     }
 
 
@@ -23,8 +28,8 @@ public class Input {
         return null;
     }
 
-    private String validateUserInputShipDir(){
-        return null;
+    private boolean validateUserInputShipDir(String input){
+        return (input.equals("up") || input.equals("down") || input.equals("right") || input.equals("left"));
     }
 
 }
