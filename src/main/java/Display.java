@@ -1,6 +1,6 @@
 public class Display {
 
-    public void displayOcean(Square [][] ocean ){
+    public static void displayOcean(Square[][] ocean ){
         System.out.print("  ");
         for (int i = 0; i < ocean[0].length; i++) {
             System.out.print(i + 1 + " ");
@@ -13,7 +13,7 @@ public class Display {
             for (int col = 0; col < ocean[0].length; col++) {
                 String marker = ocean[row][col].getSquare().toString();
 
-                System.out.print(marker);
+                System.out.print(marker + " ");
             }
         }
         System.out.println();

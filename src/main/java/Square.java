@@ -2,6 +2,13 @@
 
 public class Square {
 
+    @Override
+    public String toString() {
+        return "Square{" +
+                "square=" + square +
+                '}';
+    }
+
     private SquareType square;
 
     protected Square(SquareType square) {
