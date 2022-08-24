@@ -4,9 +4,10 @@ public class BoardFactory {
 
     Input input = new Input();
 
-    public void placeShip(String direction, int[] startCoordinate, Square[][] ocean, ShipType shiptype) {
+    public void placeShip(String direction, int[] startCoordinate, Square[][] ocean, ShipType shiptype, Player player) {
 
         Ship ship = new Ship(shiptype);
+        player.addShip(ship);
 
         int userX = startCoordinate[0];
         int userY = startCoordinate[1];
@@ -53,7 +54,7 @@ public class BoardFactory {
 
     }
 
-    public void manualPlacement(Square[][] ocean) {
+    public void manualPlacement(Square[][] ocean, Player player) {
         for (ShipType shiptype : ShipType.values()) {
             boolean validInput = false;
             int Length = shiptype.shipSize;
@@ -62,7 +63,7 @@ public class BoardFactory {
             while (!validInput) {
                 validInput = Board.isPlacementOk(Length, direction, startCoordinate);
             }
-            placeShip(direction, startCoordinate, ocean, shiptype);
+            placeShip(direction, startCoordinate, ocean, shiptype, player);
         }
     }
 }
