@@ -1,5 +1,3 @@
-package board;
-
 public class Square {
 
     private SquareType square;

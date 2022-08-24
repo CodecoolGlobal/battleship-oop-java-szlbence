@@ -1,5 +1,3 @@
-package board;
-
 public enum SquareType {
         EMPTY("≋"),
         SHIP("⚓"),

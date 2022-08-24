@@ -1,5 +1,3 @@
-package board;
-
 public class Board {
     public Square[][] getOcean() {
         return ocean;
@@ -31,6 +29,7 @@ public class Board {
                             return false;
                         }
                     }
+
                     return true;
                 }
 

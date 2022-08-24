@@ -1,5 +1,3 @@
-import board.Square;
-
 import java.util.ArrayList;
 
 
