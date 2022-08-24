@@ -12,4 +12,9 @@ public enum SquareType {
         private SquareType(String squareDisplay){
                 this.squareDisplay = squareDisplay;
         }
+
+        @Override
+        public String toString() {
+                return squareDisplay;
+        }
 }

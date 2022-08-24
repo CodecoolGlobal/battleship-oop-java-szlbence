@@ -6,7 +6,7 @@ public class Player {
      Board board = new Board();
      Square [][] ocean = board.getOcean();
 
-     ArrayList <Ship> ships = new ArrayList<Ship>();
+     ArrayList<Ship> ships = new ArrayList<>();
      private boolean alive = true;
 
      public Square[][] getBoard(){
