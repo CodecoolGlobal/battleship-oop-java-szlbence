@@ -1,26 +1,40 @@
 public class Display {
 
-    public static void displayOcean(Square[][] ocean ){
+    public static void displayOcean(Square[][] enemyOcean ){
         System.out.print("  ");
-        for (int i = 0; i < ocean[0].length; i++) {
+        for (int i = 0; i < enemyOcean[0].length; i++) {
             System.out.print(i + 1 + " ");
         }
-        // System.out.print("  1 2 3 4 5 6 7 8 9 10 11");
         String[] letters = {"A","B","C","D","E","F","G","H","I","J","K","L","M","N"};
-        for (int row = 0; row < ocean.length; row++) {
+        for (int row = 0; row < enemyOcean.length; row++) {
             System.out.print("\n");
             System.out.print(letters[row].toUpperCase() + " ");
-            for (int col = 0; col < ocean[0].length; col++) {
-                String marker = ocean[row][col].getSquare().toString();
-
+            for (int col = 0; col < enemyOcean[0].length; col++) {
+                String marker;
+                if (enemyOcean[row][col].getSquare() == SquareType.SHIP){
+                    marker = SquareType.EMPTY.toString();
+                } else marker = enemyOcean[row][col].getSquare().toString();
                 System.out.print(marker + " ");
             }
         }
-        System.out.println();
-        System.out.println();
+        System.out.println("\n\n");
     }
 
-    public void displayPlacement(){
+    public void displayPlacement(Square[][] ownOcean){
+        System.out.print("  ");
+        for (int i = 0; i < ownOcean[0].length; i++) {
+            System.out.print(i + 1 + " ");
+        }
+        String[] letters = {"A","B","C","D","E","F","G","H","I","J","K","L","M","N"};
+        for (int row = 0; row < ownOcean.length; row++) {
+            System.out.print("\n");
+            System.out.print(letters[row].toUpperCase() + " ");
+            for (int col = 0; col < ownOcean[0].length; col++) {
+                String marker = ownOcean[row][col].getSquare().toString();
+                System.out.print(marker + " ");
+            }
+        }
+        System.out.println("\n\n");
     }
 
    public void displayMenu(){
