@@ -1,3 +1,5 @@
+package battleship;
+
 public enum SquareType {
         EMPTY("≋"),
         SHIP("⚓"),

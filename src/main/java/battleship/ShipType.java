@@ -1,3 +1,5 @@
+package battleship;
+
 public enum ShipType {
         CARRIER(1),
         CRUISER(3),

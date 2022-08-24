@@ -1,3 +1,5 @@
+package battleship;
+
 import static java.util.Arrays.deepToString;
 
 public class Battleship {
