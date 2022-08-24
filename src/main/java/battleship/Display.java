@@ -1,3 +1,5 @@
+package battleship;
+
 public class Display {
 
     public static void displayOcean(Square[][] enemyOcean ){

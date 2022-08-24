@@ -1,3 +1,5 @@
+package battleship;
+
 public class Board {
     public Square[][] getOcean() {
         return ocean;
@@ -15,7 +17,7 @@ public class Board {
         }
     }
 
-    boolean isPlacementOk(int Length, String direction, int[] startCoordinate) {
+    public boolean isPlacementOk(int Length, String direction, int[] startCoordinate) {
         int userX = startCoordinate[0];
         int userY = startCoordinate[1];
 
@@ -29,6 +31,7 @@ public class Board {
                             return false;
                         }
                     }
+
                     return true;
                 }
 

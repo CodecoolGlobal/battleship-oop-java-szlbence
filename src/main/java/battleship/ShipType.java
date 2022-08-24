@@ -1,3 +1,5 @@
+package battleship;
+
 public enum ShipType {
         CARRIER(1),
         CRUISER(3),
@@ -5,7 +7,7 @@ public enum ShipType {
         SUBMARINE(5),
         DESTROYER(7);
 
-        public final int shipDisplay;
+        public final int shipSize;
 
-        ShipType(int shipDisplay) {this.shipDisplay = shipDisplay;}
+        ShipType(int shipDisplay) {this.shipSize = shipDisplay;}
 }
