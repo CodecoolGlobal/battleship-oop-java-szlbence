@@ -6,6 +6,16 @@ public class Player {
      Board board = new Board();
      Square [][] ocean = board.getOcean();
 
+     String name;
+
+     Player(String name){
+          this.name = name;
+     }
+
+     public String getName() {
+          return name;
+     }
+
      ArrayList <Ship> ships = new ArrayList<Ship>();
      private boolean isalive = true;
 

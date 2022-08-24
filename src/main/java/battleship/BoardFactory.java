@@ -62,9 +62,9 @@ public class BoardFactory {
             int[] startCoordinate = new int[2];
             int Length = shiptype.shipSize;
             while (!validInput) {
-            display.displayMsg("prov coord: ");
+            display.displayMsg(player.getName() + ", please provide the starting coordinate of your "+ shiptype +" (length:" + Length +") :");
             startCoordinate = input.getUserInputCoord();
-            display.displayMsg("prov dir: ");
+            display.displayMsg(player.getName() + ", please provide the direction of your "+ shiptype +" (length:" + Length +") :");
             direction = input.getUserInputShipDir();
                 validInput = Board.isPlacementOk(Length, direction, startCoordinate);
             }
