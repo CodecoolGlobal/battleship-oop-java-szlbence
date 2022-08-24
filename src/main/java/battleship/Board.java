@@ -5,7 +5,7 @@ public class Board {
         return ocean;
     }
 
-    final private Square[][] ocean;
+    private Square[][] ocean;
 
     Board() {
 

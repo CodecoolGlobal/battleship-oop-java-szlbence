@@ -26,7 +26,6 @@ public class Player {
           if(count > 0) this.isalive = false;
      }
 
-
      public void shootEnemy(Square[][] ocean, int[] coordinate, Ship ship){
           int userX = coordinate[0];
           int userY = coordinate[1];
