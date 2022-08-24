@@ -52,7 +52,8 @@ public class Display {
        System.out.println(stringBuilder);
    }
 
-   public void displayResults(){
+   public void displayResults(String winner){
+       System.out.println(winner + " has won!");
    }
 
     public void displayMsg(String message){
