@@ -3,8 +3,6 @@ package battleship;
 public class BoardFactory {
 
     Input input = new Input();
-    int[] userInput = input.getUserInputCoord();
-
 
     public void placeShip(String direction, int[] startCoordinate, Square[][] ocean, ShipType shiptype) {
 
@@ -55,8 +53,16 @@ public class BoardFactory {
 
     }
 
-    public void manualPlacement(String direction, int[] startCoordinate, Square[][] ocean) {
-        for (ShipType shiptype : ShipType.values())
+    public void manualPlacement(Square[][] ocean) {
+        for (ShipType shiptype : ShipType.values()) {
+            boolean validInput = false;
+            int Length = shiptype.shipSize;
+            var startCoordinate = input.getUserInputCoord();
+            String direction = input.getUserInputShipDir();
+            while (!validInput) {
+                validInput = Board.isPlacementOk(Length, direction, startCoordinate);
+            }
             placeShip(direction, startCoordinate, ocean, shiptype);
+        }
     }
 }
