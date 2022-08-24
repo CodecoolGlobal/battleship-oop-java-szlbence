@@ -1,23 +1,22 @@
 public class Display {
 
-    public String displayBoard(){
-        return null;
+    public void displayBoard(){
+
     }
 
-    public String displayPlacement(){
-        return null;
+    public void displayPlacement(){
     }
 
-   public String displayMenu(){
-       return null;
+   public void displayMenu(){
+
    }
 
-   public String displayResults(){
-       return null;
+   public void displayResults(){
+
    }
 
-    public String displayMsg(){
-        return null;
+    public void displayMsg(String message){
+        System.out.println(message);
     }
 
 }
