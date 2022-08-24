@@ -18,7 +18,7 @@ public class BoardFactory {
         switch (direction) {
             case "up":
 
-                for (int x = userX; x > x - Length; x--) {
+                for (int x = userX; x > userX - Length; x--) {
                     Square shipCoordinate = ocean[x][userY];
                     shipCoordinate.setSquare(SquareType.SHIP);
                     ship.addShipCoordinates(shipCoordinate);
@@ -26,14 +26,14 @@ public class BoardFactory {
 
             case "down":
 
-                for (int x = userX; x < x + Length; x++) {
+                for (int x = userX; x < userX + Length; x++) {
                     Square shipCoordinate = ocean[x][userY];
                     shipCoordinate.setSquare(SquareType.SHIP);
                     ship.addShipCoordinates(shipCoordinate);
                 }
             case "left":
 
-                for (int y = userY; y > y - Length; y--) {
+                for (int y = userY; y > userY - Length; y--) {
                     Square shipCoordinate = ocean[userX][y];
                     shipCoordinate.setSquare(SquareType.SHIP);
                     ship.addShipCoordinates(shipCoordinate);
@@ -43,7 +43,7 @@ public class BoardFactory {
             case "right":
 
 
-                for (int y = userY; y < y + Length; y++) {
+                for (int y = userY; y < userY + Length; y++) {
                     Square shipCoordinate = ocean[userX][y];
                     shipCoordinate.setSquare(SquareType.SHIP);
                     ship.addShipCoordinates(shipCoordinate);
@@ -55,15 +55,21 @@ public class BoardFactory {
     }
 
     public void manualPlacement(Square[][] ocean, Player player) {
+        Display display = new Display();
         for (ShipType shiptype : ShipType.values()) {
             boolean validInput = false;
+            String direction = "";
+            int[] startCoordinate = new int[2];
             int Length = shiptype.shipSize;
-            var startCoordinate = input.getUserInputCoord();
-            String direction = input.getUserInputShipDir();
             while (!validInput) {
+            display.displayMsg("prov coord: ");
+            startCoordinate = input.getUserInputCoord();
+            display.displayMsg("prov dir: ");
+            direction = input.getUserInputShipDir();
                 validInput = Board.isPlacementOk(Length, direction, startCoordinate);
             }
             placeShip(direction, startCoordinate, ocean, shiptype, player);
+            display.displayPlacement(ocean);
         }
     }
 }
