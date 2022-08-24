@@ -2,6 +2,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
+
 public class Input {
 
     private Map<String, Integer> xCoordinate = new HashMap<String, Integer>() {{

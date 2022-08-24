@@ -1,5 +1,3 @@
-import board.Square;
-
 import java.util.ArrayList;
 
 
@@ -7,11 +5,20 @@ public class Ship {
 
     ShipType shipType;
 
-    ArrayList <Square> square = new ArrayList<Square>();
+    ArrayList <Square> shipSquares = new ArrayList<Square>();
+
+
 
     public Ship(ShipType type) {
+        this.shipType = type;
+    }
 
-        this.square = square;
+    public ShipType getShipType(){
+        return this.shipType;
+    }
+
+    public void addShipCoordinates(Square shipSquare){
+        this.shipSquares.add(shipSquare);
     }
 
 }
