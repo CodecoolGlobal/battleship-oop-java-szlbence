@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 public class Input {
 
+    Display display = new Display();
     private Map<String, Integer> xCoordinate = new HashMap<String, Integer>() {{
         put("A", 0);
         put("B", 1);
@@ -43,6 +44,7 @@ public class Input {
         while (!validInput) {
             input = getUserInput();
             validInput = validateUserInputShipDir(input);
+            if (!validInput)display.displayMsg("Please provide a correct direction: ");
         }
         return input;
     }
@@ -54,6 +56,7 @@ public class Input {
         while (!validInput) {
             input = getUserInput();
             validInput = validateUserInputCoordinate(input);
+            if (!validInput)display.displayMsg("Please provide a correct coordinate: ");
         }
         int xCoord = xCoordinate.get(input.substring(0, 1).toUpperCase());
         int yCoord = yCoordinate.get(input.substring(1).toUpperCase());
