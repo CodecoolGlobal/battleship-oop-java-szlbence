@@ -4,12 +4,10 @@ public class BoardFactory {
 
     Input input = new Input();
     int [] userInput = input.getUserInputCoord();
-    Board board = new Board();
-    Square [][] ocean = board.getOcean();
 
 
 
-     public void manualPlacement(String direction, int [] startCoordinate, int Length, Ship ship){
+     public void manualPlacement(String direction, int [] startCoordinate, int Length, Ship ship, Square[][] ocean){
          int userX = startCoordinate[0];
          int userY = startCoordinate[1];
 

@@ -11,6 +11,8 @@ public class Ship {
 
 
 
+
+
     public Ship(ShipType type) {
         this.shipType = type;
     }
@@ -21,6 +23,22 @@ public class Ship {
 
     public void addShipCoordinates(Square shipSquare){
         this.shipSquares.add(shipSquare);
+    }
+
+    public boolean isSunk(){
+        int counter = 0;
+        for (Square square: shipSquares){
+            if (square.getSquare() == SquareType.HIT) {
+                counter++;
+            }
+        }
+        if (counter == shipSquares.size()){
+            for (Square square: shipSquares){
+                square.setSquare(SquareType.SUNK);
+            }
+            return true;
+        }
+        return false;
     }
 
 }
