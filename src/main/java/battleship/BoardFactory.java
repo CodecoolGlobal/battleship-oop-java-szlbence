@@ -6,9 +6,10 @@ public class BoardFactory {
     int[] userInput = input.getUserInputCoord();
 
 
-    public void placeShip(String direction, int[] startCoordinate, Square[][] ocean, ShipType shiptype) {
+    public void placeShip(String direction, int[] startCoordinate, Square[][] ocean, ShipType shiptype, Player player) {
 
         Ship ship = new Ship(shiptype);
+        player.addShip(ship);
 
         int userX = startCoordinate[0];
         int userY = startCoordinate[1];
@@ -55,8 +56,9 @@ public class BoardFactory {
 
     }
 
-    public void manualPlacement(String direction, int[] startCoordinate, Square[][] ocean) {
+    public void manualPlacement(String direction, int[] startCoordinate, Square[][] ocean, Player player) {
         for (ShipType shiptype : ShipType.values())
-            placeShip(direction, startCoordinate, ocean, shiptype);
+            placeShip(direction, startCoordinate, ocean, shiptype, player);
+
     }
 }
