@@ -54,16 +54,26 @@ public class BoardFactory {
 
     }
 
-    public void manualPlacement(Square[][] ocean, Player player) {
+    public void manualPlacement(Square[][] ocean, Player player, String random) {
         for (ShipType shiptype : ShipType.values()) {
             boolean validInput = false;
             int Length = shiptype.shipSize;
-            var startCoordinate = input.getUserInputCoord();
-            String direction = input.getUserInputShipDir();
-            while (!validInput) {
-                validInput = Board.isPlacementOk(Length, direction, startCoordinate);
+
+            int[] startCoordinate = new int[2];
+            String direction = "";
+
+            if (random == "random") {
+                startCoordinate = input.getUserInputCoord();
+                direction = input.getUserInputShipDir();
+            } else if (random == "manual") {
+                startCoordinate = Util.generateRandomCoordinate();
+                direction = Util.generateDirection();
             }
-            placeShip(direction, startCoordinate, ocean, shiptype, player);
+                while (!validInput) {
+                    validInput = Board.isPlacementOk(Length, direction, startCoordinate);
+                }
+                placeShip(direction, startCoordinate, ocean, shiptype, player);
+
         }
     }
 }
