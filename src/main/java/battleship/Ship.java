@@ -9,10 +9,6 @@ public class Ship {
 
     ArrayList <Square> shipSquares = new ArrayList<Square>();
 
-
-
-
-
     public Ship(ShipType type) {
         this.shipType = type;
     }
