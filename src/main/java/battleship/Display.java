@@ -1,3 +1,5 @@
+package battleship;
+
 public class Display {
 
     public String displayBoard(){
