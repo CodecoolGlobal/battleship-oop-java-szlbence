@@ -2,7 +2,7 @@ package battleship;
 
 public class Display {
 
-    public static void displayOcean(Square[][] enemyOcean ){
+    public  void displayOcean(Square[][] enemyOcean ){
         System.out.print("  ");
         for (int i = 0; i < enemyOcean[0].length; i++) {
             System.out.print(i + 1 + " ");

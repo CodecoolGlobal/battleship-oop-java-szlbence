@@ -86,6 +86,7 @@ public class Input {
 
 
     private boolean validateUserInputCoordinate(String input) {
+        if (input.length() == 0){return false;}
         String xCoord = input.substring(0, 1).toUpperCase();
         String yCoord = input.substring(1);
         return xCoordinate.containsKey(xCoord) && yCoordinate.containsKey(yCoord);

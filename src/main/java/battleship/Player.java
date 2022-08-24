@@ -36,10 +36,10 @@ public class Player {
           if(count > 0) this.isalive = false;
      }
 
-     public void shootEnemy(Square[][] ocean, int[] coordinate, Ship ship){
+     public void shootEnemy(Square[][] ocean, int[] coordinate){
           int userX = coordinate[0];
           int userY = coordinate[1];
-          if (isHit(coordinate, ship)){
+          if (isHit(coordinate)){
                ocean[userX][userY].setSquare(SquareType.HIT);
           } else {
                ocean[userX][userY].setSquare(SquareType.MISSED);
@@ -47,11 +47,13 @@ public class Player {
 
      }
 
-     public boolean isHit(int[] coordinate, Ship ship){
+     public boolean isHit(int[] coordinate){
           int userX = coordinate[0];
           int userY = coordinate[1];
           if (ocean[userX][userY].getSquare() == SquareType.SHIP){
-               ship.isSunk();
+
+
+               //ship.isSunk();
                return true;
           }
           return false;
