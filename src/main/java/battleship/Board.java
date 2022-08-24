@@ -5,7 +5,7 @@ public class Board {
         return ocean;
     }
 
-    private Square[][] ocean;
+    private static Square[][] ocean;
 
     Board() {
 
@@ -17,7 +17,7 @@ public class Board {
         }
     }
 
-    public boolean isPlacementOk(int Length, String direction, int[] startCoordinate) {
+    public static boolean isPlacementOk(int Length, String direction, int[] startCoordinate) {
         int userX = startCoordinate[0];
         int userY = startCoordinate[1];
 
