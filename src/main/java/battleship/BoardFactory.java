@@ -54,7 +54,7 @@ public class BoardFactory {
 
     }
 
-    public void manualPlacement(Square[][] ocean, Player player, String random) {
+    public void placement(Square[][] ocean, Player player, String random) {
         for (ShipType shiptype : ShipType.values()) {
             boolean validInput = false;
             int Length = shiptype.shipSize;
