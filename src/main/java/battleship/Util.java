@@ -24,6 +24,12 @@ public class Util {
         return directions[r];
     }
 
+    public static int generateRandomInteger(){
+        int randomInteger = random.nextInt(100) + 1;
+        return randomInteger;
+    }
+
+
 
     public void writeToFile (String nameAndScore) {
         try {

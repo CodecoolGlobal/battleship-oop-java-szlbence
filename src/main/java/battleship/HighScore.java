@@ -8,6 +8,8 @@ import java.util.Scanner;
 
 public class HighScore {
 
+    Display display = new Display();
+
 
 
     public String HighScore(){
@@ -21,7 +23,7 @@ public class HighScore {
             myReader.close();
             return data.toString();
         } catch (FileNotFoundException e) {
-            System.out.println("An error occurred.");
+            display.displayMsg("An error occurred.");
             e.printStackTrace();
         }
         return null;

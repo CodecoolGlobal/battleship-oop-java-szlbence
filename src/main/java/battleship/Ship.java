@@ -7,6 +7,8 @@ public class Ship {
 
     ShipType shipType;
 
+    Display display = new Display();
+
     ArrayList <Square> shipSquares = new ArrayList<Square>();
 
     public Ship(ShipType type) {
@@ -21,8 +23,8 @@ public class Ship {
         this.shipSquares.add(shipSquare);
     }
 
-    public boolean isSunk(){
-        int counter = 0;
+    public void isSunk(){
+        int counter = 1;
         for (Square square: shipSquares){
             if (square.getSquare() == SquareType.HIT) {
                 counter++;
@@ -32,9 +34,8 @@ public class Ship {
             for (Square square: shipSquares){
                 square.setSquare(SquareType.SUNK);
             }
-            return true;
+            display.displayMsg(shipType.name() + " is sunk.");
         }
-        return false;
     }
 
 }
