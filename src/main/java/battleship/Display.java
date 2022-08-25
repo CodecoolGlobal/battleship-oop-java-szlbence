@@ -45,10 +45,10 @@ public class Display {
                 .append("BATTLESHIP-ADOBEBE\n")
                 .append("******************\n\n")
                 .append("Please select an option:\n")
-                .append("1 - Two Player Mode with generated Ships\n")
-                .append("2 - Two Player Mode with manually placed Ships\n")
-                .append("3 - Human vs AI with generated Ships\n")
-                .append("4 - Human vs AI with manually placed Ships\n")
+                .append("1 - Two Player Mode with manually placed Ships\n")
+                .append("2 - Two Player Mode with generated Ships\n")
+                .append("3 - Human vs AI with manually placed Ships\n")
+                .append("4 - Human vs AI with generated Ships\n")
                 .append("5 - Show HighScore\n")
                 .append("6 - EXIT\n");
        System.out.println(stringBuilder);

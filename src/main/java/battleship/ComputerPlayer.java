@@ -6,7 +6,9 @@ public class ComputerPlayer extends Player{
         super("Robot");
     }
 
-    public void shootEnemy(Square[][] ocean, Ship ship, Player player){
+
+
+    public void shootEnemy(Square[][] ocean, Player player){
         int[] robotCoordinates = Util.generateRandomCoordinate();
         int robotX = robotCoordinates[0];
         int robotY = robotCoordinates[1];
