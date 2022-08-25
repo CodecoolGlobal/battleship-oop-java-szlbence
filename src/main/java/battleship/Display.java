@@ -2,7 +2,7 @@ package battleship;
 
 public class Display {
 
-    public static void displayOcean(Square[][] enemyOcean ){
+    public  void displayOcean(Square[][] enemyOcean ){
         System.out.print("  ");
         for (int i = 0; i < enemyOcean[0].length; i++) {
             System.out.print(i + 1 + " ");
@@ -46,7 +46,7 @@ public class Display {
                 .append("******************\n\n")
                 .append("Please select an option:\n")
                 .append("1 - Two Player Mode with generated Ships\n")
-                .append("1 - Two Player Mode with manually placed Ships\n")
+                .append("2 - Two Player Mode with manually placed Ships\n")
                 .append("3 - Human vs AI with generated Ships\n")
                 .append("4 - Human vs AI with manually placed Ships\n")
                 .append("5 - Show HighScore\n")
