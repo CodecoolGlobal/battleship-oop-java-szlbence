@@ -2,17 +2,15 @@ package battleship;
 
 public class ComputerPlayer extends Player{
 
-    // takes random shots excluding already struck fields
+    public ComputerPlayer(){
+        super("Robot");
+    }
 
-    // check what needs overriding
-    //      - shootEnemy
-    //      -
-
-    public void shootEnemy(Square[][] ocean, Ship ship){
-        int[] robotCoordinates = Util.generateRandomCoordinates();
+    public void shootEnemy(Square[][] ocean, Ship ship, Player player){
+        int[] robotCoordinates = Util.generateRandomCoordinate();
         int robotX = robotCoordinates[0];
         int robotY = robotCoordinates[1];
-        if (isHit(robotCoordinates, ship)){
+        if (isHit(player, robotCoordinates)){
             ocean[robotX][robotY].setSquare(SquareType.HIT);
         } else {
             ocean[robotX][robotY].setSquare(SquareType.MISSED);
