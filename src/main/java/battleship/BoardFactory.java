@@ -66,7 +66,7 @@ public class BoardFactory {
             startCoordinate = input.getUserInputCoord();
             display.displayMsg(player.getName() + ", please provide the direction of your "+ shiptype +" (length:" + Length +") :");
             direction = input.getUserInputShipDir();
-                validInput = Board.isPlacementOk(Length, direction, startCoordinate);
+                validInput = player.getBoard().isPlacementOk(Length, direction, startCoordinate);
             }
             placeShip(direction, startCoordinate, ocean, shiptype, player);
             display.displayPlacement(ocean);

@@ -3,8 +3,8 @@ package battleship;
 import java.util.ArrayList;
 
 public class Player {
-     Board board = new Board();
-     Square [][] ocean = board.getOcean();
+     private Board board = new Board();
+     // Square [][] ocean = board.getOcean();
 
      String name;
 
@@ -22,8 +22,8 @@ public class Player {
      public void addShip(Ship ship){
           this.ships.add(ship);
      }
-     public Square[][] getBoard(){
-          return this.ocean;
+     public Board getBoard(){
+          return this.board;
      }
 
      public void setIsAlive(boolean isAlive){
@@ -36,21 +36,20 @@ public class Player {
           if(count > 0) this.isalive = false;
      }
 
-     public void shootEnemy(Square[][] ocean, int[] coordinate){
-          int userX = coordinate[0];
-          int userY = coordinate[1];
-          if (isHit(coordinate)){
-               ocean[userX][userY].setSquare(SquareType.HIT);
+     public void shootEnemy(Player player, int[] coordinate){
+
+          if (isHit(player, coordinate)){
+               player.getBoard().setOcean(SquareType.HIT, coordinate);
           } else {
-               ocean[userX][userY].setSquare(SquareType.MISSED);
+               player.getBoard().setOcean(SquareType.MISSED, coordinate);
           }
 
      }
 
-     public boolean isHit(int[] coordinate){
+     public boolean isHit(Player player, int[] coordinate){
           int userX = coordinate[0];
           int userY = coordinate[1];
-          if (ocean[userX][userY].getSquare() == SquareType.SHIP){
+          if (player.getBoard().getOcean()[userX][userY].getSquare() == SquareType.SHIP){
 
 
                //ship.isSunk();
