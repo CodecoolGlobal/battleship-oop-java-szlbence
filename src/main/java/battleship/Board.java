@@ -30,7 +30,7 @@ public class Board {
 
         switch (direction) {
             case "up":
-                if (userX - (Length - 1) <= 0) {
+                if (userX - (Length - 1) < 0) {
                     return false;
                 } else {
                     for (int x = userX; x > userX - Length; x--) {
@@ -43,7 +43,7 @@ public class Board {
                 }
 
             case "down":
-                if (userX + (Length - 1) >= 9) {
+                if (userX + (Length - 1) > 9) {
                     return false;
                 }
                 else {
@@ -55,7 +55,7 @@ public class Board {
                     return true;
                 }
             case "left":
-                if (userY - (Length - 1) <= 0) {
+                if (userY - (Length - 1) < 0) {
                     return false;
                 }
                 else {
@@ -67,7 +67,7 @@ public class Board {
                     return true;
                 }
             case "right":
-                if (userY + (Length - 1) >= 9) {
+                if (userY + (Length - 1) > 9) {
                     return false;
                 }
                 else {

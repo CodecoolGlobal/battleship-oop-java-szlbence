@@ -23,6 +23,7 @@ public class BoardFactory {
                     shipCoordinate.setSquare(SquareType.SHIP);
                     ship.addShipCoordinates(shipCoordinate);
                 }
+                break;
 
             case "down":
 
@@ -31,6 +32,7 @@ public class BoardFactory {
                     shipCoordinate.setSquare(SquareType.SHIP);
                     ship.addShipCoordinates(shipCoordinate);
                 }
+                break;
             case "left":
 
                 for (int y = userY; y > userY - Length; y--) {
@@ -39,7 +41,7 @@ public class BoardFactory {
                     ship.addShipCoordinates(shipCoordinate);
 
                 }
-
+                break;
             case "right":
 
 
@@ -49,6 +51,7 @@ public class BoardFactory {
                     ship.addShipCoordinates(shipCoordinate);
 
                 }
+                break;
         }
 
 
