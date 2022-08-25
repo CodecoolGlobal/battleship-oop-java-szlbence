@@ -26,14 +26,14 @@ public class Player {
           return this.board;
      }
 
-     public void setIsAlive(boolean isAlive){
+     private void setIsAlive(){
           int count = 0;
           for(Ship ship: ships){
               for(Square square : ship.shipSquares){
-                   if(square.getSquare() != SquareType.SUNK)  count++ ;
+                   if(square.getSquare() == SquareType.SHIP)  count++ ;
               }
          }
-          if(count > 0) this.isalive = false;
+          if(count == 0) this.isalive = false;
      }
 
      public void shootEnemy(Player player, int[] coordinate){
@@ -56,5 +56,10 @@ public class Player {
                return true;
           }
           return false;
+     }
+
+     public boolean isAlive() {
+          setIsAlive();
+          return this.isalive;
      }
 }
