@@ -75,7 +75,12 @@ public class Game {
             this.enemyPlayer = new ComputerPlayer();
         }
         display.displayPlacement(enemyPlayer.getBoard().getOcean());
-        boardFactory.manualPlacement(enemyPlayer.getBoard().getOcean(), enemyPlayer, isRandom);
+        if (isHuman) {
+            boardFactory.manualPlacement(enemyPlayer.getBoard().getOcean(), enemyPlayer, isRandom);
+        } else {
+            boardFactory.manualPlacement(enemyPlayer.getBoard().getOcean(), enemyPlayer, "random");
+        }
+
 
     }
 
