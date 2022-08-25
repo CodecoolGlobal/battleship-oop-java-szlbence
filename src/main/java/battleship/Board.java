@@ -5,11 +5,18 @@ public class Board {
         return ocean;
     }
 
-    private static Square[][] ocean;
+    private Square[][] ocean = new Square[10][10];
+    // ocean = new Square[10][10];
+
+    public void setOcean(SquareType squareType,  int[] coordinate){
+        int userX = coordinate[0];
+        int userY = coordinate[1];
+        this.ocean[userX][userY].setSquare(squareType);
+    }
 
     Board() {
 
-        ocean = new Square[10][10];
+
         for (int row = 0; row < 10; row++) {
             for (int col = 0; col < 10; col++) {
                 ocean[row][col] = new Square(SquareType.EMPTY);
@@ -17,7 +24,7 @@ public class Board {
         }
     }
 
-    public static boolean isPlacementOk(int Length, String direction, int[] startCoordinate) {
+    public boolean isPlacementOk(int Length, String direction, int[] startCoordinate) {
         int userX = startCoordinate[0];
         int userY = startCoordinate[1];
 
@@ -26,8 +33,8 @@ public class Board {
                 if (userX - (Length - 1) < 0) {
                     return false;
                 } else {
-                    for (int x = userX; x > x - Length; x--) {
-                        if (ocean[x][userY].getSquare() != SquareType.EMPTY) {
+                    for (int x = userX; x > userX - Length; x--) {
+                        if (this.ocean[x][userY].getSquare() != SquareType.EMPTY) {
                             return false;
                         }
                     }
@@ -40,7 +47,7 @@ public class Board {
                     return false;
                 }
                 else {
-                    for (int x = userX; x < x + Length; x++) {
+                    for (int x = userX; x < userX + Length; x++) {
                         if (ocean[x][userY].getSquare() != SquareType.EMPTY) {
                             return false;
                         }
@@ -52,7 +59,7 @@ public class Board {
                     return false;
                 }
                 else {
-                    for (int y = userY; y > y - Length; y--) {
+                    for (int y = userY; y > userY - Length; y--) {
                         if (ocean[userX][y].getSquare() != SquareType.EMPTY) {
                             return false;
                         }
@@ -64,7 +71,7 @@ public class Board {
                     return false;
                 }
                 else {
-                    for (int y = userY; y < y + Length; y++) {
+                    for (int y = userY; y < userY + Length; y++) {
                         if (ocean[userX][y].getSquare() != SquareType.EMPTY) {
                             return false;
                         }
