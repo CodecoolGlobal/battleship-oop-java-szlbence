@@ -57,18 +57,26 @@ public class BoardFactory {
 
     }
 
-    public void manualPlacement(Square[][] ocean, Player player) {
+    public void manualPlacement(Square[][] ocean, Player player, String isRandom) {
         Display display = new Display();
         for (ShipType shiptype : ShipType.values()) {
             boolean validInput = false;
-            String direction = "";
-            int[] startCoordinate = new int[2];
             int Length = shiptype.shipSize;
+
+            int[] startCoordinate = new int[2];
+            String direction = "";
+
+
             while (!validInput) {
-            display.displayMsg(player.getName() + ", please provide the starting coordinate of your "+ shiptype +" (length:" + Length +") :");
-            startCoordinate = input.getUserInputCoord();
-            display.displayMsg(player.getName() + ", please provide the direction of your "+ shiptype +" (length:" + Length +") :");
-            direction = input.getUserInputShipDir();
+                if (isRandom == "manual") {
+                    display.displayMsg(player.getName() + ", please provide the starting coordinate of your "+ shiptype +" (length:" + Length +") :");
+                    startCoordinate = input.getUserInputCoord();
+                    display.displayMsg(player.getName() + ", please provide the direction of your "+ shiptype +" (length:" + Length +") :");
+                    direction = input.getUserInputShipDir();
+                } else if (isRandom == "random") {
+                    startCoordinate = Util.generateRandomCoordinate();
+                    direction = Util.generateDirection();
+                }
                 validInput = player.getBoard().isPlacementOk(Length, direction, startCoordinate);
             }
             placeShip(direction, startCoordinate, ocean, shiptype, player);
