@@ -40,7 +40,8 @@ public class Player {
 
           if (isHit(player, coordinate)){
                player.getBoard().setOcean(SquareType.HIT, coordinate);
-          } else {
+          }
+          else {
                player.getBoard().setOcean(SquareType.MISSED, coordinate);
           }
 
@@ -49,10 +50,11 @@ public class Player {
      public boolean isHit(Player player, int[] coordinate){
           int userX = coordinate[0];
           int userY = coordinate[1];
-          if (player.getBoard().getOcean()[userX][userY].getSquare() == SquareType.SHIP){
-
-
-               //ship.isSunk();
+          Square shootSquare = player.getBoard().getOcean()[userX][userY];
+          if (shootSquare.getSquare() == SquareType.SHIP){
+               for(Ship ship : ships){
+                    if(ship.shipSquares.contains(shootSquare)) ship.isSunk();
+               }
                return true;
           }
           return false;
