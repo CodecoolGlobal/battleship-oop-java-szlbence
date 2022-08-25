@@ -1,10 +1,14 @@
 package battleship;
 
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Random;
 
 public class Util {
 
+
+    Display display = new Display();
     static Random random = new Random();
 
     public static int[] generateRandomCoordinate(){
@@ -18,5 +22,18 @@ public class Util {
                 "up", "down", "left", "right"};
         int r = random.nextInt(4);
         return directions[r];
+    }
+
+
+    public void writeToFile (String nameAndScore) {
+        try {
+            FileWriter myWriter = new FileWriter("high-score.txt");
+            myWriter.write(nameAndScore);
+            myWriter.close();
+            display.displayMsg("Score saved");
+        } catch (IOException e) {
+            display.displayMsg("An error occurred.");
+            e.printStackTrace();
+        }
     }
 }
