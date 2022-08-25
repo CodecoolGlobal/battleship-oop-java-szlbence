@@ -18,37 +18,40 @@ public class BoardFactory {
         switch (direction) {
             case "up":
 
-                for (int x = userX; x > x - Length; x--) {
+                for (int x = userX; x > userX - Length; x--) {
                     Square shipCoordinate = ocean[x][userY];
                     shipCoordinate.setSquare(SquareType.SHIP);
                     ship.addShipCoordinates(shipCoordinate);
                 }
+                break;
 
             case "down":
 
-                for (int x = userX; x < x + Length; x++) {
+                for (int x = userX; x < userX + Length; x++) {
                     Square shipCoordinate = ocean[x][userY];
                     shipCoordinate.setSquare(SquareType.SHIP);
                     ship.addShipCoordinates(shipCoordinate);
                 }
+                break;
             case "left":
 
-                for (int y = userY; y > y - Length; y--) {
+                for (int y = userY; y > userY - Length; y--) {
                     Square shipCoordinate = ocean[userX][y];
                     shipCoordinate.setSquare(SquareType.SHIP);
                     ship.addShipCoordinates(shipCoordinate);
 
                 }
-
+                break;
             case "right":
 
 
-                for (int y = userY; y < y + Length; y++) {
+                for (int y = userY; y < userY + Length; y++) {
                     Square shipCoordinate = ocean[userX][y];
                     shipCoordinate.setSquare(SquareType.SHIP);
                     ship.addShipCoordinates(shipCoordinate);
 
                 }
+                break;
         }
 
 
