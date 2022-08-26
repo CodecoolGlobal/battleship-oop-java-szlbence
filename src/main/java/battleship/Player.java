@@ -55,7 +55,11 @@ public class Player {
           Square shootSquare = player.getBoard().getOcean()[userX][userY];
           if (shootSquare.getSquare() == SquareType.SHIP){
                for(Ship ship : ships){
-                    if(ship.shipSquares.contains(shootSquare)) ship.isSunk();
+                    var test = ship.shipSquares;
+                    for (int i = 0; i < test.size(); i++) {
+                         if (test.get(i).getSquare().equals(shootSquare.getSquare())){
+                              ship.isSunk(test);}
+                    }
                }
                return true;
           }

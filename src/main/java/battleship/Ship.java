@@ -23,15 +23,15 @@ public class Ship {
         this.shipSquares.add(shipSquare);
     }
 
-    public void isSunk(){
+    public void isSunk(ArrayList <Square> ship){
         int counter = 1;
-        for (Square square: shipSquares){
+        for (Square square: ship){
             if (square.getSquare() == SquareType.HIT) {
                 counter++;
             }
         }
-        if (counter == shipSquares.size()){
-            for (Square square: shipSquares){
+        if (counter == ship.size()){
+            for (Square square: ship){
                 square.setSquare(SquareType.SUNK);
             }
             display.displayMsg(shipType.name() + " is sunk.");
