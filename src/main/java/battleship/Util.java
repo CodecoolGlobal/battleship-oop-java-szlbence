@@ -12,8 +12,8 @@ public class Util {
     static Random random = new Random();
 
     public static int[] generateRandomCoordinate(){
-        int xCoordinate = random.nextInt(10) + 1;
-        int yCoordinate = random.nextInt(10) + 1;
+        int xCoordinate = random.nextInt(10) ;
+        int yCoordinate = random.nextInt(10) ;
         return new int[]{xCoordinate, yCoordinate};
     }
 

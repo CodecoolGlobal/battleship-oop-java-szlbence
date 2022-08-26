@@ -7,6 +7,7 @@ public class Player {
      // Square [][] ocean = board.getOcean();
 
      String name;
+     Display display = new Display();
 
      Player(String name){
           this.name = name;
@@ -37,14 +38,15 @@ public class Player {
      }
 
      public void shootEnemy(Player player, int[] coordinate){
-
+          var ocean = player.getBoard().getOcean();
           if (isHit(player, coordinate)){
                player.getBoard().setOcean(SquareType.HIT, coordinate);
-          }
-          else {
+          } else if (ocean[coordinate[0]][coordinate[1]].getSquare() == SquareType.EMPTY) {
                player.getBoard().setOcean(SquareType.MISSED, coordinate);
           }
-
+          else{
+               display.displayMsg("You already shot there, too bad.");
+          }
      }
 
      public boolean isHit(Player player, int[] coordinate){
