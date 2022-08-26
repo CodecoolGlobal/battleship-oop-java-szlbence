@@ -1,11 +1,11 @@
 package battleship;
 
 public enum SquareType {
-        EMPTY("≋"),
-        SHIP("⚓"),
-        HIT("✔"),
+        EMPTY("\uD83C\uDF0A"),
+        SHIP("\uD83D\uDEF6"),
+        HIT("\uD83D\uDFE8"),
         SUNK("\uD83D\uDD25"),
-        MISSED("✖");
+        MISSED("⭕");
 
         public final String squareDisplay;
 
