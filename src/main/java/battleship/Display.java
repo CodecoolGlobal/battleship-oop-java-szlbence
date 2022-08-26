@@ -3,6 +3,7 @@ package battleship;
 public class Display {
 
     public  void displayOcean(Square[][] enemyOcean ){
+        clearScreen();
         System.out.print("  ");
         for (int i = 0; i < enemyOcean[0].length; i++) {
             System.out.print(i + 1 + "  ");
@@ -23,6 +24,7 @@ public class Display {
     }
 
     public void displayPlacement(Square[][] ownOcean){
+        clearScreen();
         System.out.print("  ");
         for (int i = 0; i < ownOcean[0].length; i++) {
             System.out.print(i + 1 + "  ");

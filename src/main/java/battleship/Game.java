@@ -20,8 +20,8 @@ public class Game {
 
         boolean isGameRunning = true;
         while (isGameRunning) {
-            display.displayMsg("Please shoot, " + actualPlayer.getName() + ": ");
             display.displayOcean(enemyPlayer.getBoard().getOcean());
+            display.displayMsg("Please shoot, " + actualPlayer.getName() + ": ");
             int[] shotCoordinate;
             if (actualPlayer instanceof ComputerPlayer)
                 ((ComputerPlayer) actualPlayer).shootEnemy(enemyPlayer.getBoard().getOcean(),enemyPlayer);
@@ -37,10 +37,6 @@ public class Game {
                 isGameRunning = false;
             }
         }
-
-        /*Square[][] testOcean = ocean.getOcean();
-        Display.displayOcean(testOcean);*/
-
     }
 
     private void initGame(int option) {
