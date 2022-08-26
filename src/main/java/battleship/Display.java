@@ -5,7 +5,7 @@ public class Display {
     public  void displayOcean(Square[][] enemyOcean ){
         System.out.print("  ");
         for (int i = 0; i < enemyOcean[0].length; i++) {
-            System.out.print(i + 1 + " ");
+            System.out.print(i + 1 + "  ");
         }
         String[] letters = {"A","B","C","D","E","F","G","H","I","J","K","L","M","N"};
         for (int row = 0; row < enemyOcean.length; row++) {
@@ -25,7 +25,7 @@ public class Display {
     public void displayPlacement(Square[][] ownOcean){
         System.out.print("  ");
         for (int i = 0; i < ownOcean[0].length; i++) {
-            System.out.print(i + 1 + " ");
+            System.out.print(i + 1 + "  ");
         }
         String[] letters = {"A","B","C","D","E","F","G","H","I","J","K","L","M","N"};
         for (int row = 0; row < ownOcean.length; row++) {
@@ -71,7 +71,7 @@ public class Display {
     public  void displayStormOcean(Square[][] enemyOcean ){
         System.out.print("\uD83C\uDF0A");
         for (int i = 0; i < enemyOcean[0].length; i++) {
-            System.out.print(i + 1 + " ");
+            System.out.print(i + 1 + "  ");
         }
         String[] letters = {"A","B","C","D","E","F","G","H","I","J","K","L","M","N"};
         for (int row = 0; row < enemyOcean.length; row++) {
